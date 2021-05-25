@@ -1,2 +1,1 @@
-# detecting_images_with_text
-Detecting images that contain text
+# Detecting images with text
