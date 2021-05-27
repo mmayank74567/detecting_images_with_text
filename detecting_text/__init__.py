@@ -1,2 +1,1 @@
 
-from .non_max_suppression import non_max_suppression
