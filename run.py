@@ -19,7 +19,7 @@ for i in path_list:
     box = object1.east_detection(image)
     if box>0:
         try: 
-            shutil.copy(i, args["output"])
+            shutil.move(i, args["output"])
             counter = counter + 1 
             print("[INFORMATION] Found text in the image {}. Copying to the output folder.".format(i))
         except:
