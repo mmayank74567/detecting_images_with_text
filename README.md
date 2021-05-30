@@ -58,7 +58,7 @@ It parses three command line arguments
 * `--model`: path to the model file
 * `--imagepath`: path to the folder of images
 * `--output`: path to the folder storing a copy of images with text in them
-* `--operation`: `copy` to make copies of images with thext in the output folder or `move` to move the images with text in the output folder (default = `copy`)
+* `--operation`: `copy` to make copies of images with text in them in the output folder or `move` to move the images with text in them to the output folder (default = `copy`)
 ## Output
 As shown in image below, images with text in them are successfully detected and copied to the output folder.
 <img src = "https://user-images.githubusercontent.com/30223211/119827306-9bdbef80-bf16-11eb-9c3d-8848f7ef79c9.png" width = 60%, height = 60%>
