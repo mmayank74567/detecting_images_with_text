@@ -8,6 +8,7 @@ apo = argparse.ArgumentParser()
 apo.add_argument("--model", required = True, help = "Path to the model")
 apo.add_argument("--imagepath", required = True, help = "Path to the folder of images")
 apo.add_argument("--output", required = True, help = "Path to the output folder of images with text")
+apo.add_argument("--operation", default = "copy", help = "'copy' to copy images with text, 'move' to move images with text")
 args = vars(apo.parse_args())
 
 object1 = DetectingText(args["model"])
@@ -19,9 +20,18 @@ for i in path_list:
     box = object1.east_detection(image)
     if box>0:
         try: 
-            shutil.move(i, args["output"])
-            counter = counter + 1 
-            print("[INFORMATION] Found text in the image {}. Copying to the output folder.".format(i))
+            if (args["operation"] == "copy"):
+                
+                shutil.copy(i, args["output"])
+                counter = counter + 1 
+                print("[INFORMATION] Found text in the image {}. Copying to the output folder.".format(i))
+            elif (args["operation"] == "move"):
+                shutil.move(i, args["output"])
+                counter = counter + 1 
+                print("[INFORMATION] Found text in the image {}. Moving to the output folder.".format(i))
+            else:
+                print("Incorret argument for --operation given")
+                break
         except:
             print("Error processing")
 print("[INFORMATION] Done. Total images found with text: {}".format(counter))
